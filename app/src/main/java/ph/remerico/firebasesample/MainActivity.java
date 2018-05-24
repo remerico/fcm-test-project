@@ -6,24 +6,32 @@ import android.os.Bundle;
 import android.text.TextUtils;
 import android.widget.TextView;
 
-public class MainActivity extends AppCompatActivity implements InstanceIDService.TokenListener {
+import java.util.Map;
+
+public class MainActivity extends AppCompatActivity implements
+        InstanceIDService.TokenListener,
+        IncomingPushService.PushListener {
 
     TextView tokenValue;
+    TextView logs;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         tokenValue = findViewById(R.id.token_value);
+        logs = findViewById(R.id.log_text);
 
         loadToken();
 
+        IncomingPushService.addListener(this);
         InstanceIDService.addListener(this);
     }
 
     @Override
     protected void onDestroy() {
         InstanceIDService.removeListener(this);
+        IncomingPushService.removeListener(this);
         super.onDestroy();
     }
 
@@ -46,6 +54,11 @@ public class MainActivity extends AppCompatActivity implements InstanceIDService
         if (!TextUtils.isEmpty(token)) {
             tokenValue.setText(token);
         }
+    }
+
+    @Override
+    public void pushPayloadReceived(Map<String, String> data) {
+        logs.setText(data.toString());
     }
 
 }
