@@ -1,0 +1,59 @@
+{
+  "project_info": {
+    "project_number": "542304974160",
+    "firebase_url": "https://remerico-firebase-sample.firebaseio.com",
+    "project_id": "remerico-firebase-sample",
+    "storage_bucket": "remerico-firebase-sample.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:542304974160:android:17eb8901f551c543",
+        "android_client_info": {
+          "package_name": "ph.remerico.firebasesample"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "542304974160-cfi4sjbqom9ttur9l9a5mkgagh8kijo4.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "ph.remerico.firebasesample",
+            "certificate_hash": "8d56267ec1c07cb8bec9e94d3e39119c11c1dd5b"
+          }
+        },
+        {
+          "client_id": "542304974160-aoa4g46aale96er82kjst1t1almgtra4.apps.googleusercontent.com",
+          "client_type": 3
+        },
+        {
+          "client_id": "542304974160-aoa4g46aale96er82kjst1t1almgtra4.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBuVyCZ4ye2pFpvBRy69hYg2L77dtpVizU"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "542304974160-aoa4g46aale96er82kjst1t1almgtra4.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
