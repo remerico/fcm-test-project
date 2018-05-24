@@ -96,16 +96,18 @@ public class IncomingPushService extends FirebaseMessagingService {
 
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
             NotificationChannel channel = new NotificationChannel(
-                    "test",
-                    "test",
-                    NotificationManager.IMPORTANCE_DEFAULT);
+                    "plush",
+                    "plush",
+                    NotificationManager.IMPORTANCE_HIGH);
             notificationManager.createNotificationChannel(channel);
         }
 
-        Notification notification = new NotificationCompat.Builder(getApplicationContext(), "test")
+        Notification notification = new NotificationCompat.Builder(getApplicationContext(), "plush")
                 .setContentTitle(data.get("plush.title"))
                 .setContentText(data.get("plush.content"))
                 .setSmallIcon(R.drawable.ic_plush_small)
+                .setPriority(Notification.PRIORITY_MAX)
+                .setCategory(Notification.CATEGORY_MESSAGE)
                 .build();
 
         notificationManager.notify(1000, notification);
